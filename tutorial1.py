@@ -64,6 +64,10 @@ vestibule = game.new_location(
 """A small area at the bottom of a flight of stairs.
 There is a glass door to the west.""")
 
+stairs = game.new_location(
+  "Stairs",
+"""You are now on the stairs, there is a door at the top of the stairs""")
+
 # Again, make sure to end with """ and to close the parenthesis) and use a comma between
 # the short and long description.
 
@@ -72,6 +76,9 @@ There is a glass door to the west.""")
 # but don't worry that it will simply vanish, instead it will be stored in the game.
 
 game.new_connection("Glass Door", sidewalk, vestibule, [IN, EAST], [OUT, WEST])
+
+game.new_connection("Stairs", vestibule, stairs, [UP], [DOWN])
+
 
 # The 'new_connection' function takes a name for the connection, two locations and
 # two directions or lists of directions.  Again, the arguments are separated by commas
